@@ -13,8 +13,8 @@
 	<meta property="og:title" content="{{ ucfirst($meta['og-title']) }}">
 	<meta property="og:description" content="{{ $meta['description'] }}">
 	<meta property="og:url" content="{{ $meta['url'] }}">
-	<meta property="og:site_name" content="moviewp">
-	<meta property="og:image" content="{{ $meta['image'] }}">
+	<meta property="og:site_name" content="moviesFlix">
+	<meta property="og:image" content="{{ @$meta['image'] }}">
 	<meta property="og:image:width" content="1896">
 	<meta property="og:image:height" content="2462">
 	<meta property="og:image:type" content="image/jpeg">
@@ -104,7 +104,6 @@ ul#a-z li.current {
 </main><!-- #main -->
 </div><!-- #site-container -->
 @yield('script')
-<script type="text/javascript" src="{{ asset('wp-content/themes/moviewp/assets/js/live.search.js') }}" id="live_search-js"></script>
 <script type="text/javascript" src="{{ asset('wp-content/themes/moviewp/assets/js/script.min.js') }}" id="script-js"></script>
 <script type="text/javascript" src="{{ asset('wp-content/themes/moviewp/assets/js/scrollbar.min.js') }}" id="scrollbar-js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/flickity@2.3.0/dist/flickity.pkgd.min.js?ver=2.3.0" id="flickity-js"></script>

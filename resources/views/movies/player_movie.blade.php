@@ -27,7 +27,7 @@
 						@foreach($movie['field_episodes'] as $key=>$value)
 						<div class="buttonLoadHost" data-load-id="{{ $movie['nid'] }}" data-load-tab="{{ $key }}"><i class="fa fa-play-circle"></i>
 							<div class="t">Episode {{ $key+1 }}</div>
-							<div class="s">Recommended, fast and low ads</div>
+							<div class="s">Watch and Download</div>
 						</div>
 						@endforeach
 						@endif
@@ -36,7 +36,7 @@
 						@foreach($movie['field_download_url'] as $key=>$value)
 						<div class="buttonLoadHost" data-load-id="{{ $movie['nid'] }}" data-load-tab="{{ $key }}"><i class="fa fa-play-circle"></i>
 							<div class="t">Server {{ $key+1 }}</div>
-							<div class="s">Recommended, fast and low ads</div>
+							<div class="s">Watch and Download</div>
 						</div>
 						@endforeach
 						@endif
@@ -45,7 +45,7 @@
 						@foreach($movie['field_download_url'] as $key=>$value)
 						<div class="buttonLoadHost" data-load-id="{{ $movie['nid'] }}" data-load-tab="{{ $key }}"><i class="fa fa-play-circle"></i>
 							<div class="t">Part {{ $key+1 }}</div>
-							<div class="s">Recommended, fast and low ads</div>
+							<div class="s">Watch and Download</div>
 						</div>
 						@endforeach
 						@endif

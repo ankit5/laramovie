@@ -44,24 +44,21 @@ class MoviesController extends Controller
         $bollywood = isset($bollywood['results']) ? $bollywood['results'] : [];
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
-        $meta['meta-title']='Movieflix';
-        $meta['description']='Movieflix';
-        $meta['og-title']='Movieflix';
-        $meta['canonical']='Movieflix';
+        $meta['meta-title']=config('app.name').' - Watch Online And Download Free Movies & Shows, Bollywood, Hollywood, Netflix, Hindi Dubbed';
+        $meta['description']=config('app.name').' is a large collection of Latest Bollywood Movies, Hollywood Movies, Hindi dubbed, Action, Adventure, Science Finction Watch Online and Free Download';
+        $meta['og-title']=config('app.name').' - Watch Online And Download Free Movies & Shows, Bollywood, Hollywood, Netflix, Hindi Dubbed';
+        $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
-
-        // $viewModel = new MoviesViewModel(
-        //     $popularMovies,
-        //     $nowPlayingMovies,
-        //     $genres
-        // );
+        //$meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
+        $meta['image']=$latest[0]['field_image_urls'];
 
         return view('movies.front', compact('meta','latest','years','popularMovies','tvshows','bollywood','genres','pager'));
     }
 
     public function tag($tag)
     {   
+        $tag_name = ucfirst(str_replace('-',' ',$tag));
+        $tag = ($tag=='hot-series')?'tv-shows':$tag;
        // $tag = str_replace('-',' ',$tag);
        // $tag = str_replace('amp',' & ',$tag);
         //print $tag;
@@ -91,19 +88,14 @@ class MoviesController extends Controller
        // $latest = isset($latest['results']) ? $latest['results'] : [];
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
-        $meta['meta-title']=@$tag_detail[0]['name'];
-        $meta['title']=@$tag_detail[0]['name'];
-        $meta['description']='Movieflix';
-        $meta['og-title']='Movieflix';
-        $meta['canonical']='Movieflix';
+        $meta['meta-title']=@$tag_name.' Movies and Shows |'.config('app.name');
+        $meta['title']=@$tag_name.' Movies and Shows';
+        $meta['description']='All '.@$tag_name.' Movies and Shows Watch Online and Download Free Streaming now';
+        $meta['og-title']=@$tag_name.' Movies and Shows';
+        $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
-
-        // $viewModel = new MoviesViewModel(
-        //     $popularMovies,
-        //     $nowPlayingMovies,
-        //     $genres
-        // );
+        $meta['image']=$latest[0]['field_image_urls'];
+ 
         $network =[];
         if($tag=='web-series'){
             $network[0]=1; 
@@ -136,13 +128,13 @@ class MoviesController extends Controller
        // $latest = isset($latest['results']) ? $latest['results'] : [];
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
-        $meta['meta-title']='Latest Movies';
-        $meta['title']='All Movies';
-        $meta['description']='Movieflix';
-        $meta['og-title']='Movieflix';
-        $meta['canonical']='Movieflix';
+        $meta['meta-title']=config('app.name').' Latest Uploaded Movies and Shows.';
+        $meta['title']='Latest Movies & Shows';
+        $meta['description']='Watch and Download Latest Bollywood Movies and Tamil, Hollywodd, Hot Series, Netflix, Amazon Prime , Hindi Dubbed, Tv Shows, English Series free Streaming now.';
+        $meta['og-title']=config('app.name').' Latest Uploaded Movies and Shows.';
+        $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
+        $meta['image']=$latest[0]['field_image_urls'];
 
         // $viewModel = new MoviesViewModel(
         //     $popularMovies,
@@ -177,13 +169,13 @@ class MoviesController extends Controller
        // $latest = isset($latest['results']) ? $latest['results'] : [];
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
-        $meta['meta-title']='Latter '.$letter.' Movies & Shows';
+        $meta['meta-title']='Latter '.$letter.' Movies & Shows|'.config('app.name');
         $meta['title']='Latter '.$letter.' Movies & Shows';
-        $meta['description']='Movieflix';
-        $meta['og-title']='Movieflix';
-        $meta['canonical']='Movieflix';
+        $meta['description']='Watch and Download Starting letter with '.$letter.' on '.config('app.name');
+        $meta['og-title']='Latter '.$letter.' Movies & Shows|'.config('app.name');
+        $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
+        $meta['image']=$latest[0]['field_image_urls'];
 
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
@@ -213,13 +205,13 @@ class MoviesController extends Controller
        // $latest = isset($latest['results']) ? $latest['results'] : [];
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
-        $meta['meta-title']=$collection.' Collections';
+        $meta['meta-title']=$collection.' Collections on '.config('app.name');
         $meta['title']=$collection.' Collections';
-        $meta['description']='Movieflix';
-        $meta['og-title']='Movieflix';
-        $meta['canonical']='Movieflix';
+        $meta['description']="Watch and Download $collection Collections Free in HD Stream Now.";
+        $meta['og-title']=$collection.' Collections on '.config('app.name');
+        $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
+        $meta['image']=$latest[0]['field_image_urls'];
 
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
@@ -228,8 +220,6 @@ class MoviesController extends Controller
     public function networks()
     {   
         
-        
-
         $genresResponse = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
         ->get(config('services.basic_auth.api_url').'api/tags')
         ->json();
@@ -241,13 +231,12 @@ class MoviesController extends Controller
        // $latest = isset($latest['results']) ? $latest['results'] : [];
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
-        $meta['meta-title']='Networks';
+        $meta['meta-title']='Networks Of Your favorite Movies and Shows|'.config('app.name');
         $meta['title']='Networks';
-        $meta['description']='Movieflix';
-        $meta['og-title']='Movieflix';
-        $meta['canonical']='Movieflix';
+        $meta['description']='Watch latest Networks Of Movies and Shows on '.config('app.name');
+        $meta['og-title']='Networks Of Your favorite Movies and Shows|'.config('app.name');
+        $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
         $network[0]=1; 
         $network_english[0]=1; 
         return view('movies.page', compact('network','network_english','meta','years','genres'));
@@ -269,13 +258,12 @@ class MoviesController extends Controller
        // $latest = isset($latest['results']) ? $latest['results'] : [];
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
-        $meta['meta-title']='Collection';
-        $meta['title']='Collection';
-        $meta['description']='Movieflix';
-        $meta['og-title']='Movieflix';
-        $meta['canonical']='Movieflix';
+        $meta['meta-title']='Collection Of Your favorite Movies and Shows|'.config('app.name');
+        $meta['title']='Collections';
+        $meta['description']='Watch latest Collection Of Movies and Shows on '.config('app.name');
+        $meta['og-title']='Collection Of Your favorite Movies and Shows|'.config('app.name');
+        $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
         $collection[0]=1;
         return view('movies.page', compact('collection','meta','years','genres'));
     }
@@ -306,13 +294,13 @@ class MoviesController extends Controller
        // $latest = isset($latest['results']) ? $latest['results'] : [];
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
-        $meta['meta-title']='Latest Series';
-        $meta['title']='All Series';
-        $meta['description']='Movieflix';
-        $meta['og-title']='Movieflix';
-        $meta['canonical']='Movieflix';
+        $meta['meta-title']='Latest Tv Shows and English Series Watch Online and free Download|'.config('app.name');
+        $meta['title']='Latest Tv Shows and English Series';
+        $meta['description']='English Tv Shows Watch online and Series, Action, Comedy, Drama, Science Fiction Download free on '.config('app.name') ;
+        $meta['og-title']='Latest Tv Shows and English Series';
+        $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
+        $meta['image']=$latest[0]['field_image_urls'];
 
         $network_english =[];
         
@@ -346,19 +334,13 @@ class MoviesController extends Controller
        // $latest = isset($latest['results']) ? $latest['results'] : [];
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
-        $meta['meta-title']=$year.' Movies & Series';
-        $meta['title']=$year.' Movies & Series';
-        $meta['description']='Movieflix';
-        $meta['og-title']='Movieflix';
-        $meta['canonical']='Movieflix';
+        $meta['meta-title']=$year.' Movies and Shows |'.config('app.name');
+        $meta['title']=$year.' Movies and Shows';
+        $meta['description']='All '.$year.' Movies and Shows Watch Online and Download Free Streaming now';
+        $meta['og-title']=$year.' Movies and Shows free download |'.config('app.name');
+        $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
-
-        // $viewModel = new MoviesViewModel(
-        //     $popularMovies,
-        //     $nowPlayingMovies,
-        //     $genres
-        // );
+        $meta['image']=$latest[0]['field_image_urls'];
 
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
@@ -389,19 +371,14 @@ class MoviesController extends Controller
        // $latest = isset($latest['results']) ? $latest['results'] : [];
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
-        $meta['meta-title']=$country.' Movies & Series';
-        $meta['title']=$country.' Movies & Series';
-        $meta['description']='Movieflix';
-        $meta['og-title']='Movieflix';
-        $meta['canonical']='Movieflix';
+        $meta['meta-title']=$country.' Movies and Shows |'.config('app.name');
+        $meta['title']=$country.' Movies and Shows';
+        $meta['description']='All '.$country.' Movies and Shows Watch Online and Download Free Streaming now';
+        $meta['og-title']=$country.' Movies and Shows free download |'.config('app.name');
+        $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
+        $meta['image']=$latest[0]['field_image_urls'];
 
-        // $viewModel = new MoviesViewModel(
-        //     $popularMovies,
-        //     $nowPlayingMovies,
-        //     $genres
-        // );
 
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
@@ -432,19 +409,13 @@ class MoviesController extends Controller
        // $latest = isset($latest['results']) ? $latest['results'] : [];
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
-        $meta['meta-title']=$actor.' Movies & Series';
-        $meta['title']=$actor.' Movies & Series';
-        $meta['description']='Movieflix';
-        $meta['og-title']='Movieflix';
-        $meta['canonical']='Movieflix';
+        $meta['meta-title']=$actor.' Movies and Shows |'.config('app.name');
+        $meta['title']=$actor.' Movies and Shows';
+        $meta['description']=$actor.' Movies and Shows Watch Online and Download Free Streaming now';
+        $meta['og-title']=$actor.' Movies and Shows free download |'.config('app.name');
+        $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
-
-        // $viewModel = new MoviesViewModel(
-        //     $popularMovies,
-        //     $nowPlayingMovies,
-        //     $genres
-        // );
+        $meta['image']=$latest[0]['field_image_urls'];
 
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
@@ -475,19 +446,13 @@ class MoviesController extends Controller
        // $latest = isset($latest['results']) ? $latest['results'] : [];
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
-        $meta['meta-title']=$director.' Movies & Series';
-        $meta['title']=$director.' Movies & Series';
-        $meta['description']='Movieflix';
-        $meta['og-title']='Movieflix';
-        $meta['canonical']='Movieflix';
+        $meta['meta-title']=$director.' Movies and Shows |'.config('app.name');
+        $meta['title']=$director.' Movies and Shows';
+        $meta['description']=$director.' Movies and Shows Watch Online and Download Free Streaming now';
+        $meta['og-title']=$director.' Movies and Shows free download |'.config('app.name');
+        $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
-
-        // $viewModel = new MoviesViewModel(
-        //     $popularMovies,
-        //     $nowPlayingMovies,
-        //     $genres
-        // );
+        $meta['image']=$latest[0]['field_image_urls'];
 
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
@@ -524,50 +489,11 @@ class MoviesController extends Controller
         $meta['og-title']='Movieflix';
         $meta['canonical']='Movieflix';
         $meta['url']=URL::current();
-        $meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
-
-        // $viewModel = new MoviesViewModel(
-        //     $popularMovies,
-        //     $nowPlayingMovies,
-        //     $genres
-        // );
+        $meta['image']=$latest[0]['field_image_urls'];
 
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
 
-
-
-
-
-
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($url)
     {
         //print $id;
@@ -615,48 +541,15 @@ class MoviesController extends Controller
         $years = isset($years['results']) ? $years['results'] : [];
         // print_r($movie['field_left']);
         // exit;
-        $meta['meta-title']=$movie['title'];
+        $meta['meta-title']=$movie['title'].' Watch Online and Free Download in HD|'.config('app.name');
         $meta['title']=$movie['title'];
-        $meta['description']='Movieflix';
-        $meta['og-title']='Movieflix';
-        $meta['canonical']='Movieflix';
+        $meta['description']=$movie['title'].' is available now on '.config('app.name').' Moviesmad, Movie Flix, Movies Flixe';
+        $meta['og-title']=$movie['title'].' Watch Online and Free Download in HD|'.config('app.name');
+        $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
+        $meta['image']=$movie['field_image_urls'];
 
         return view('movies.post', compact('meta','movie','years','genres'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
