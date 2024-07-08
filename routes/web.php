@@ -1,8 +1,4 @@
 <?php
-if(@$_REQUEST['s']){
-    header('Location:/search/'.$_REQUEST['s'].'/');
-    exit;
-}
 use Illuminate\Support\Facades\Route;
 
 // Movies
