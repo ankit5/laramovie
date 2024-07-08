@@ -15,10 +15,45 @@ class MoviesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        if(@$_REQUEST['s']){
+        $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
+            ->get(config('services.basic_auth.api_url').'api/allfilms?title='.$_REQUEST['s'].'&page='.@$_REQUEST['page'])
+                ->json();
+                $pager = isset($latest['pager']) ? $latest['pager'] : [];
+                $latest = isset($latest['results']) ? $latest['results'] : [];
+        
+                if(@$_REQUEST['ajax']==1){
+                    return view('movies.ajaxlist', compact('latest'));
+                }
+        
+                $genresResponse = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
+                ->get(config('services.basic_auth.api_url').'api/tags')
+                ->json();
+        
+                $years = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
+                ->get(config('services.basic_auth.api_url').'api/years')
+                ->json();
+                
+               // $latest = isset($latest['results']) ? $latest['results'] : [];
+                $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
+                $years = isset($years['results']) ? $years['results'] : [];
+                $meta['meta-title']='Search '.ucfirst($_REQUEST['s']).'|'.config('app.name');
+                $meta['title']='Serach for '.ucfirst($_REQUEST['s']);
+                $meta['description']='Watch and Download '.$_REQUEST['s'].' on '.config('app.name');
+                $meta['og-title']='Search '.ucfirst($_REQUEST['s']).'|'.config('app.name');
+                $meta['canonical']=URL::current();
+                $meta['url']=URL::current();
+                $meta['image']=$latest[0]['field_image_urls'];
+        
+                return view('movies.page', compact('meta','latest','years','genres','pager'));
+        
+        }
+
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
         ->get(config('services.basic_auth.api_url').'api/films')
             ->json();
+        
 
         $tvshows = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
         ->get(config('services.basic_auth.api_url').'api/films?field_url_value=series&tag_id_not[]=106')

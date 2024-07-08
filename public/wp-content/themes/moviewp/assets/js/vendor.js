@@ -38,13 +38,18 @@ $(window).scroll(function() {
    // console.log($(document).height())
      if (scrollLoad && $(window).scrollTop() >= $(document).height() - $(window).height() - 50) {
         scrollLoad = false;
-
-   
+        const urlParams = new URLSearchParams(window.location.search);
+        const s = urlParams.get('s');
+       if(s){
+        url_post= "?s="+s+"&ajax=1&page="+appendNumber;
+       }else{
+        url_post= "?ajax=1&page="+appendNumber;
+       }
     $('.loader2').show();
 
     $.ajax( {
         type: "GET",
-        url: "?ajax=1&page="+appendNumber,
+        url: url_post,
         success: function( data ) {
             if(data==''){
                 scrollLoad = false;

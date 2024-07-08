@@ -7,7 +7,6 @@
 	<title>{{ ucfirst($meta['meta-title']) }}</title>
 	<meta name="description" content="{{ $meta['description'] }}">
 	<link rel="canonical" href="{{ $meta['canonical'] }}">
-	<link rel="next" href="https://moviewp.com/page/2/">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="{{ ucfirst($meta['og-title']) }}">
@@ -27,7 +26,7 @@
 <link rel="dns-prefetch" href="//images.metahub.space">
 
 @php
-$rand = 'hsfkjf';
+$rand = 'h34kjf';
 @endphp
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
