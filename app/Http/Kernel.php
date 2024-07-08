@@ -4,11 +4,6 @@ namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
-if(@$_REQUEST['s']){
-    header('Location:/search/'.$_REQUEST['s'].'/');
-    exit;
-}
-
 class Kernel extends HttpKernel
 {
     /**
