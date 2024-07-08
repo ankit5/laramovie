@@ -136,7 +136,7 @@
 			</ul>
 </li>
 
-<li class="search"><form method="get" role="form" id="searchform" autocomplete="off" action="/"><i class="fa fa-search"></i><input aria-label="Search..." id="search" name="s" type="search" class="search-input" value="" placeholder="Search..."></form><div class="live-search"></div></li>			</ul>
+<li class="search"><form method="get" role="form" id="searchform" autocomplete="off" action="/search/"><i class="fa fa-search"></i><input aria-label="Search..." id="search" name="s" type="search" class="search-input" value="" placeholder="Search..."></form><div class="live-search"></div></li>			</ul>
 		</nav>
 		<p id="slogan">Movies &amp; TV Shows On MoviesFlix.hair</p>
 	</div>
