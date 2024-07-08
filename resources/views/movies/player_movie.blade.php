@@ -58,7 +58,7 @@
 			</div>
 	<script src="//cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="{{ asset('wp-content/themes/moviewp/assets/js/scrollbar.min.js') }}" id="scrollbar-js"></script>
-	<script src="{{ asset('wp-content/themes/moviewp/assets/js/autoembed.js?ver=3.8.7') }}"></script>
+	<script src="{{ asset('wp-content/themes/moviewp/assets/js/autoembed.js?ver=3.8.7') }}?asdf"></script>
 	
 
 	<div id="videoPopupMenu"></div></body></html>

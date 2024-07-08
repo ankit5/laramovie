@@ -8,7 +8,7 @@ $(document).on("click", ".buttonLoadHost", function () {
 
     $(".buttonLoadHost").removeClass("active");
     $(this).addClass("active");
-    var url = `https://play.123hdmovies2.xyz/?id=${id}&tab=${tab}&embed=true`;
+    var url = `https://play.123hdmovies2.xyz/?id=${id}&tab=${tab}`;
     window.open(url, "_blank");
     //
     //document.location.href = url;
