@@ -19,6 +19,7 @@ class MoviesController extends Controller
         // print $search;
         // exit;
         if(@$_REQUEST['s']){
+            $_REQUEST['s'] = str_replace(" ",'-',$_REQUEST['s']);
             header('Location:/search/'.$_REQUEST['s'].'/');
             exit;
         }
@@ -27,10 +28,7 @@ class MoviesController extends Controller
     {   
         // print $search;
         // exit;
-        if(@$_REQUEST['s']){
-            header('Location:/search/'.$_REQUEST['s'].'/');
-            exit;
-        }
+        $search = str_replace("-",' ',$search);
         
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
             ->get(config('services.basic_auth.api_url').'api/allfilms?title='.$search.'&page='.@$_REQUEST['page'])
