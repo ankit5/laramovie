@@ -60,7 +60,6 @@ home blog custom overview frontpage @endsection
 
 @include('templates.collection')
 
-@include('templates.most-viewed')
 
 </div>
 </section>
