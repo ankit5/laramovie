@@ -14,6 +14,15 @@ class MoviesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function search2()
+    {   
+        // print $search;
+        // exit;
+        if(@$_REQUEST['s']){
+            header('Location:/search/'.$_REQUEST['s'].'/');
+            exit;
+        }
+    }
     public function search($search)
     {   
         // print $search;
