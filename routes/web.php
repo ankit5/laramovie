@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 // Movies
 Route::middleware('page-cache')->get('/', 'MoviesController@index')->name('movies.index');
 Route::get('/movies', 'MoviesController@movies')->name('movies.movies');
+Route::get('/search/{search}', 'MoviesController@search')->name('movies.search');
 Route::get('/tv-series', 'MoviesController@series')->name('movies.series');
 Route::get('/movies/{id}', 'MoviesController@show')->name('movies.show');
 

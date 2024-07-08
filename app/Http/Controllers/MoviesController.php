@@ -14,11 +14,13 @@ class MoviesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function search($search)
     {   
-        if(@$_REQUEST['s']){
+        // print $search;
+        // exit;
+        
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-            ->get(config('services.basic_auth.api_url').'api/allfilms?title='.$_REQUEST['s'].'&page='.@$_REQUEST['page'])
+            ->get(config('services.basic_auth.api_url').'api/allfilms?title='.$search.'&page='.@$_REQUEST['page'])
                 ->json();
                 $pager = isset($latest['pager']) ? $latest['pager'] : [];
                 $latest = isset($latest['results']) ? $latest['results'] : [];
@@ -38,16 +40,23 @@ class MoviesController extends Controller
                // $latest = isset($latest['results']) ? $latest['results'] : [];
                 $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
                 $years = isset($years['results']) ? $years['results'] : [];
-                $meta['meta-title']='Search '.ucfirst($_REQUEST['s']).'|'.config('app.name');
-                $meta['title']='Serach for '.ucfirst($_REQUEST['s']);
-                $meta['description']='Watch and Download '.$_REQUEST['s'].' on '.config('app.name');
-                $meta['og-title']='Search '.ucfirst($_REQUEST['s']).'|'.config('app.name');
+                $meta['meta-title']='Search '.ucfirst($search).'|'.config('app.name');
+                $meta['title']='Serach for '.ucfirst($search);
+                $meta['description']='Watch and Download '.$search.' on '.config('app.name');
+                $meta['og-title']='Search '.ucfirst($search).'|'.config('app.name');
                 $meta['canonical']=URL::current();
                 $meta['url']=URL::current();
-                $meta['image']=$latest[0]['field_image_urls'];
+                $meta['image']=@$latest[0]['field_image_urls'];
         
                 return view('movies.page', compact('meta','latest','years','genres','pager'));
         
+        }
+
+    public function index()
+    {   
+        if(@$_REQUEST['s']){
+            header('Location:/search/'.$_REQUEST['s'].'/');
+            exit;
         }
 
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
