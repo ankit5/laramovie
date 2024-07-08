@@ -54,10 +54,7 @@ class MoviesController extends Controller
 
     public function index()
     {   
-        if(@$_REQUEST['s']){
-            header('Location:/search/'.$_REQUEST['s'].'/');
-            exit;
-        }
+        
 
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
         ->get(config('services.basic_auth.api_url').'api/films')
