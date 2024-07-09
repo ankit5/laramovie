@@ -628,7 +628,7 @@ if(str_contains($movie['field_left']['Genre'],'TV Shows')){
     $similar_tag ='?tag_id='.$similar_tag;
 }
 if(str_contains($movie['field_url'],'/series')){
-    $similar_tag = '?field_url_value=series';
+    $similar_tag = '?field_url_value=series&tag_id_not[]=106';
 }
 
    
