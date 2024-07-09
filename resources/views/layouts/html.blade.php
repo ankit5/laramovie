@@ -26,7 +26,7 @@
 <link rel="dns-prefetch" href="//images.metahub.space">
 
 @php
-$rand = 'h34kxjf3';
+$rand = 'h34kxdjf3';
 @endphp
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
