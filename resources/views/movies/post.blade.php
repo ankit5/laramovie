@@ -4,7 +4,7 @@
 @endsection
 
 @section('script')
-<script type="text/javascript" src="{{ asset('wp-content/themes/moviewp/assets/js/modal.js?ver=3.8.8') }}" id="modal-js"></script>
+<script type="text/javascript" src="{{ asset('wp-content/themes/moviewp/assets/js/modal.js?dfg') }}" id="modal-js"></script>
 <script type="text/javascript" src="https://static.addtoany.com/menu/page.js?ver=6.4.3" id="addtoany-js"></script>
 @endsection
 
@@ -184,7 +184,7 @@ post-template-default single single-post postid-552 single-format-standard custo
           </li>
           @endif
           <li id="multiplayer">
-            <a class="blue" rel="modal" data-modal-type="iframe" href="{{ $meta['url'] }}?player_movie=1&embed=true">
+            <a class="blue" rel="modal" data-modal-type="iframe" href="{{ $meta['url'] }}?player_movie=1">
               <i class="fa fa-window-restore"></i>
               <span>Watch & Download</span>
             </a>

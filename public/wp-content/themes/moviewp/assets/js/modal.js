@@ -159,7 +159,7 @@
                 }
             } else if ("iframe" == d.attr("data-modal-type")) {
                 var sandboxvalue = "allow-same-origin allow-scripts allow-popups allow-forms";
-                var n = a("<iframe>", { src: f, class: "modal-item",sandbox : sandboxvalue, frameborder: 0, allowfullscreen: !0, vspace: 0, hspace: 0, scrolling: "auto" });
+                var n = a("<iframe>", { src: f, class: "modal-item", frameborder: 0, allowfullscreen: !0, vspace: 0, hspace: 0, scrolling: "auto" });
                 c.html(n),
                     n.on("load", function () {
                         c.removeClass("modal-loading");
