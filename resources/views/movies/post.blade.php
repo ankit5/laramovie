@@ -65,7 +65,7 @@ post-template-default single single-post postid-552 single-format-standard custo
           <div class="details">
             <span itemprop='contentRating' id='Rated'>{{$rate_name}}</span>
             <span>
-              <a href="/years/{{ @$movie['field_year'] }}/" rel="tag">{{ @$movie['field_year'] }}</a>
+              <a href="/years/{{ @$movie['field_year'] }}" rel="tag">{{ @$movie['field_year'] }}</a>
             </span>
             <span itemprop="genre">
               @foreach($movie['tags'] as $tag)
@@ -90,7 +90,7 @@ post-template-default single single-post postid-552 single-format-standard custo
           @foreach($Director as $value)
           <span itemprop="director" itemscope="itemscope" itemtype="http://schema.org/Person">
             <span itemprop="name">
-              <a href="/director/{{ Str::slug($value) }}/" rel="tag">{{ $value }}</a>,
+              <a href="/director/{{ Str::slug($value) }}" rel="tag">{{ $value }}</a>,
             </span>
           </span>
           
@@ -106,7 +106,7 @@ post-template-default single single-post postid-552 single-format-standard custo
           @foreach($Actors as $value)
           <span itemprop="director" itemscope="itemscope" itemtype="http://schema.org/Person">
             <span itemprop="name">
-              <a href="/actor/{{ Str::slug($value) }}/" rel="tag">{{ $value }}</a>,
+              <a href="/actor/{{ Str::slug($value) }}" rel="tag">{{ $value }}</a>,
             </span>
           </span>
           @endforeach
@@ -121,7 +121,7 @@ post-template-default single single-post postid-552 single-format-standard custo
           @foreach($Country as $value)
           <span itemprop="director" itemscope="itemscope" itemtype="http://schema.org/Person">
             <span itemprop="name">
-              <a href="/country/{{ Str::slug($value) }}/" rel="tag">{{ $value }}</a>,
+              <a href="/country/{{ Str::slug($value) }}" rel="tag">{{ $value }}</a>,
             </span>
           </span>
           @endforeach
@@ -136,7 +136,7 @@ post-template-default single single-post postid-552 single-format-standard custo
           @foreach($Country as $value)
           <span itemprop="director" itemscope="itemscope" itemtype="http://schema.org/Person">
             <span itemprop="name">
-              <a href="/country/{{ Str::slug($value) }}/" rel="tag">{{ $value }}</a>,
+              <a href="/country/{{ Str::slug($value) }}" rel="tag">{{ $value }}</a>,
             </span>
           </span>
           @endforeach
@@ -147,7 +147,7 @@ post-template-default single single-post postid-552 single-format-standard custo
           <strong>Networks: </strong>
           <span itemprop="director" itemscope="itemscope" itemtype="http://schema.org/Person">
             <span itemprop="name">
-              <a href="/networks/{{ Str::slug($movie['field_right']['Networks']) }}/" rel="tag">{{ $movie['field_right']['Networks'] }}</a>
+              <a href="/networks/{{ Str::slug($movie['field_right']['Networks']) }}" rel="tag">{{ $movie['field_right']['Networks'] }}</a>
             </span>
           </span>
           <br>
@@ -184,7 +184,7 @@ post-template-default single single-post postid-552 single-format-standard custo
           </li>
           @endif
           <li id="multiplayer">
-            <a class="blue" rel="modal" data-modal-type="iframe" href="{{ $meta['url'] }}/server/">
+            <a class="blue" rel="modal" data-modal-type="iframe" href="{{ $meta['url'] }}/server">
               <i class="fa fa-window-restore"></i>
               <span>Watch & Download</span>
             </a>

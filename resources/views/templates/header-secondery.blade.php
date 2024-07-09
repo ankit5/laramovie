@@ -6,7 +6,7 @@
 					<div class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Genre<i class="fa fa-angle-down"></i></div>
 					<ul class="dropdown-menu dropdown-menu-large ps-display">
 					@foreach ($genres as $genre)
-                    <li class="cat-item cat-item-4"><a href="{{ $genre['view_taxonomy_term'] }}/">{{ $genre['name']}} ({{ $genre['count']}})</a></li> 
+                    <li class="cat-item cat-item-4"><a href="{{ $genre['view_taxonomy_term'] }}">{{ $genre['name']}} ({{ $genre['count']}})</a></li> 
                     @endforeach
 
 					</ul>
@@ -15,7 +15,7 @@
 					<div class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Year<i class="fa fa-angle-down"></i></div>
 					<ul class="dropdown-menu year ps-display">
 					@foreach ($years as $year)
-                    <li><a href="/years/{{ $year['field_year'] }}/">{{ $year['field_year'] }}</a></li>
+                    <li><a href="/years/{{ $year['field_year'] }}">{{ $year['field_year'] }}</a></li>
                     @endforeach
 					</ul>
 				</li>
@@ -136,7 +136,7 @@
 			</ul>
 </li>
 
-<li class="search"><form method="get" role="form" id="searchform" autocomplete="off" action="/search/"><i class="fa fa-search"></i><input aria-label="Search..." id="search" name="s" type="search" class="search-input" value="" placeholder="Search..."></form><div class="live-search"></div></li>			</ul>
+<li class="search"><form method="get" role="form" id="searchform" autocomplete="off" action="/search"><i class="fa fa-search"></i><input aria-label="Search..." id="search" name="s" type="search" class="search-input" value="" placeholder="Search..."></form><div class="live-search"></div></li>			</ul>
 		</nav>
 		<p id="slogan">Movies &amp; TV Shows On MoviesFlix.hair</p>
 	</div>

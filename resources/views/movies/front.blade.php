@@ -17,7 +17,7 @@ home blog custom overview frontpage @endsection
 <div class="item-container">
 <div class="app-heading">
 <div class="text">Latest Series</div>
-<a href="/tv-series/" class="all">View All</a>
+<a href="/tv-series" class="all">View All</a>
 </div>
 <div class="carousel" data-flickity="{ &quot;autoPlay&quot;: true, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
 			
@@ -38,7 +38,7 @@ home blog custom overview frontpage @endsection
 
 <div class="app-heading">
 <div class="text">Latest Movies</div>
-<a href="/movies/" class="all">View All</a>
+<a href="/movies" class="all">View All</a>
 </div>
 <div class="carousel" data-flickity="{ &quot;autoPlay&quot;: true, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
 
@@ -49,7 +49,7 @@ home blog custom overview frontpage @endsection
 
 <div class="app-heading">
 <div class="text">Bollywood Movies</div>
-<a href="/genre/bollywood/" class="all">View All</a>
+<a href="/genre/bollywood" class="all">View All</a>
 </div>
 <div class="carousel" data-flickity="{ &quot;autoPlay&quot;: true, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
 
