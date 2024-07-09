@@ -572,7 +572,7 @@ class MoviesController extends Controller
         $movie['field_tags'] = explode(",", $movie['field_tags']);
         $movie['tags']=array();
         foreach($movie['field_tags'] as $key=>$value){
-            $movie['tags'][$key]['slug']="/genre/".Str::slug(html_entity_decode($value))."/";
+            $movie['tags'][$key]['slug']="/genre/".Str::slug(html_entity_decode($value));
             $movie['tags'][$key]['name']=html_entity_decode($value);
            
          }
