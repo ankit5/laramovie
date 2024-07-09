@@ -14,7 +14,7 @@ Route::middleware('page-cache')->get('/search', 'MoviesController@search2')->nam
 Route::middleware('page-cache')->get('/tv-series', 'MoviesController@series')->name('movies.series');
 Route::middleware('page-cache')->get('/tv-series/{page}', 'MoviesController@series')->name('movies.series');
 
-Route::middleware('page-cache')->get('/movies/{id}', 'MoviesController@show')->name('movies.show');
+Route::middleware('page-cache')->get('/show/{id}', 'MoviesController@show')->name('movies.show');
 
 Route::middleware('page-cache')->get('/years/{year}', 'MoviesController@year')->name('movies.year');
 Route::middleware('page-cache')->get('/years/{year}/{page}', 'MoviesController@year')->name('movies.year');
