@@ -587,7 +587,7 @@ class MoviesController extends Controller
         $movie['field_left'] =array();
          foreach($left as $key=>$value){
             list($a, $b) = explode(":",$value);
-           if($key!=0) $movie['field_left'][$a]=html_entity_decode($b);
+            $movie['field_left'][$a]=html_entity_decode($b);
          }
          $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
@@ -604,9 +604,38 @@ class MoviesController extends Controller
         $similar = explode(' ',$movie['title']);
 
 $similar = ($similar[0]=='A' || $similar[0]=='The' || $similar[0]=='for')?$similar[1].' '.$similar[2]:$similar[0].' '.$similar[1];
+// print_r($movie['field_left']);
+// exit;
+$similar_tag ='';
+if(str_contains($movie['field_left']['Genre'],'Bollywood')){
+    $similar_tag = 86;
+    $similar_tag ='?tag_id='.$similar_tag;
+}
+if(str_contains($movie['field_left']['Genre'],'Hollywood')){
+    $similar_tag = 64;
+    $similar_tag ='?tag_id='.$similar_tag;
+}
+if(str_contains($movie['field_left']['Genre'],'South Special')){
+    $similar_tag = 82;
+    $similar_tag ='?tag_id='.$similar_tag;
+}
+if(str_contains($movie['field_left']['Genre'],'TV Shows')){
+    $similar_tag = 106;
+    $similar_tag ='?tag_id='.$similar_tag;
+}
+if(str_contains($movie['field_left']['Genre'],'TV Shows')){
+    $similar_tag = 106;
+    $similar_tag ='?tag_id='.$similar_tag;
+}
+if(str_contains($movie['field_url'],'/series')){
+    $similar_tag = '?field_url_value=series';
+}
+
+   
+
 
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/films?title='.$similar)
+        ->get(config('services.basic_auth.api_url').'api/films'.$similar_tag)
             ->json();
            
             $latest = isset($latest['results']) ? $latest['results'] : [];
