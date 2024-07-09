@@ -1,7 +1,7 @@
 <div class="sidebar sb-left">
 	<nav class="mobile-nav">
 		<ul>
-			<li class="active"><a href=""><i class="fa fa-home"></i><span>Home</span></a></li>	
+			<li class="active"><a href="/"><i class="fa fa-home"></i><span>Home</span></a></li>	
 			<li><a href="/movies"><i class="fa fa-film"></i><span>Movies</span></a></li>
 			<li><a href="/genre/hollywood"><i class="fa fa-film"></i><span>Hollywood</span></a></li>
 			<li><a href="/genre/web-series"><i class="fa fa-desktop"></i><span>Hindi Series</span></a></li>
