@@ -546,7 +546,7 @@ class MoviesController extends Controller
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
 
-    public function show($url)
+    public function show($url,$player_movie='')
     {
         //print $id;
         //exit;
@@ -554,7 +554,7 @@ class MoviesController extends Controller
         $movie = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
         ->get(config('services.basic_auth.api_url').'api/movie?url_alias=/'.$url)
         ->json();
-        if(@$_REQUEST['player_movie']){
+        if(@$player_movie){
             $movie = $movie[0];
             return view('movies.player_movie', compact('movie'));
         }
