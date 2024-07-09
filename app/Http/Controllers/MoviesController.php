@@ -24,19 +24,19 @@ class MoviesController extends Controller
             exit;
         }
     }
-    public function search($search)
+    public function search($search,$page='')
     {   
         // print $search;
         // exit;
         $search = str_replace("-",' ',$search);
         
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-            ->get(config('services.basic_auth.api_url').'api/allfilms?title='.$search.'&page='.@$_REQUEST['page'])
+            ->get(config('services.basic_auth.api_url').'api/allfilms?title='.$search.'&page='.@$page)
                 ->json();
                 $pager = isset($latest['pager']) ? $latest['pager'] : [];
                 $latest = isset($latest['results']) ? $latest['results'] : [];
         
-                if(@$_REQUEST['ajax']==1){
+                if(@$page==1){
                     return view('movies.ajaxlist', compact('latest'));
                 }
         
@@ -107,7 +107,7 @@ class MoviesController extends Controller
         return view('movies.front', compact('meta','latest','years','popularMovies','tvshows','bollywood','genres','pager'));
     }
 
-    public function tag($tag)
+    public function tag($tag,$page='')
     {   
         $tag_name = ucfirst(str_replace('-',' ',$tag));
         $tag = ($tag=='hot-series')?'tv-shows':$tag;
@@ -120,12 +120,12 @@ class MoviesController extends Controller
         
         $tag_detail = isset($tag_detail['results']) ? $tag_detail['results'] : [];
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/allfilms?tag_id='.@$tag_detail[0]['tid'].'&page='.@$_REQUEST['page'])
+        ->get(config('services.basic_auth.api_url').'api/allfilms?tag_id='.@$tag_detail[0]['tid'].'&page='.@$page)
             ->json();
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
 
-        if(@$_REQUEST['ajax']==1){
+        if(@$page==1){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -156,16 +156,16 @@ class MoviesController extends Controller
         return view('movies.page', compact('network','meta','latest','tag_detail','years','genres','pager'));
     }
 
-    public function movies()
+    public function movies($page='')
     {   
         
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/allfilms?field_url_value_not=/series&tag_id_not[]=113&tag_id_not[]=106&tag_id_not[]=91&page='.@$_REQUEST['page'])
+        ->get(config('services.basic_auth.api_url').'api/allfilms?field_url_value_not=/series&tag_id_not[]=113&tag_id_not[]=106&tag_id_not[]=91&page='.@$page)
             ->json();
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
 
-        if(@$_REQUEST['ajax']==1){
+        if(@$page){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -197,16 +197,16 @@ class MoviesController extends Controller
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
 
-    public function letter($letter)
+    public function letter($letter,$page='')
     {   
         
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/allfilms?start_with='.$letter.'&page='.@$_REQUEST['page'])
+        ->get(config('services.basic_auth.api_url').'api/allfilms?start_with='.$letter.'&page='.@$page)
             ->json();
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
 
-        if(@$_REQUEST['ajax']==1){
+        if(@$page==1){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -232,17 +232,17 @@ class MoviesController extends Controller
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
 
-    public function collection_search($collection)
+    public function collection_search($collection,$page='')
     {   
         $collection = str_replace("-",' ',$collection);
         $collection = str_replace(" collection",'',$collection);
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/allfilms?title_contain_all='.$collection.'&page='.@$_REQUEST['page'])
+        ->get(config('services.basic_auth.api_url').'api/allfilms?title_contain_all='.$collection.'&page='.@$page)
             ->json();
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
 
-        if(@$_REQUEST['ajax']==1){
+        if(@$page==1){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -322,16 +322,16 @@ class MoviesController extends Controller
 
 
 
-    public function series()
+    public function series($page='')
     {   
         
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/allfilms?field_url_value=series&tag_id_not[]=106&page='.@$_REQUEST['page'])
+        ->get(config('services.basic_auth.api_url').'api/allfilms?field_url_value=series&tag_id_not[]=106&page='.@$page)
             ->json();
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
 
-        if(@$_REQUEST['ajax']==1){
+        if(@$page==1){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -362,16 +362,16 @@ class MoviesController extends Controller
         return view('movies.page', compact('network_english','meta','latest','years','genres','pager'));
     }
 
-    public function year($year)
+    public function year($year,$page='')
     {   
         
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/allfilms?year='.$year.'&page='.@$_REQUEST['page'])
+        ->get(config('services.basic_auth.api_url').'api/allfilms?year='.$year.'&page='.@$page)
             ->json();
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
 
-        if(@$_REQUEST['ajax']==1){
+        if(@$page==1){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -397,18 +397,18 @@ class MoviesController extends Controller
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
 
-    public function country($country)
+    public function country($country,$page='')
     {   
         
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/allfilms?left_contain='.$country.'&left_start_with=Country&page='.@$_REQUEST['page'])
+        ->get(config('services.basic_auth.api_url').'api/allfilms?left_contain='.$country.'&left_start_with=Country&page='.@$page)
             ->json();
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
         
        // print_r($pager);
 
-        if(@$_REQUEST['ajax']==1){
+        if(@$page==1){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -435,18 +435,18 @@ class MoviesController extends Controller
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
 
-    public function actor($actor)
+    public function actor($actor,$page='')
     {   
         $actor = str_replace('-',' ',$actor);
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/allfilms?left_contain='.$actor.'&left_start_with=Actors&page='.@$_REQUEST['page'])
+        ->get(config('services.basic_auth.api_url').'api/allfilms?left_contain='.$actor.'&left_start_with=Actors&page='.@$page)
             ->json();
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
         
        // print_r($pager);
 
-        if(@$_REQUEST['ajax']==1){
+        if(@$page==1){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -472,18 +472,18 @@ class MoviesController extends Controller
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
 
-    public function director($director)
+    public function director($director,$page='')
     {   
         $director = str_replace('-',' ',$director);
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/allfilms?left_contain='.$director.'&left_start_with=Director&page='.@$_REQUEST['page'])
+        ->get(config('services.basic_auth.api_url').'api/allfilms?left_contain='.$director.'&left_start_with=Director&page='.@$page)
             ->json();
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
         
        // print_r($pager);
 
-        if(@$_REQUEST['ajax']==1){
+        if(@$page==1){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -509,18 +509,18 @@ class MoviesController extends Controller
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
 
-    public function network($network)
+    public function network($network,$page='')
     {   
         $network = str_replace('-',' ',$network);
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/allfilms?right_contain='.$network.'&right_start_with=Networks&page='.@$_REQUEST['page'])
+        ->get(config('services.basic_auth.api_url').'api/allfilms?right_contain='.$network.'&right_start_with=Networks&page='.@$page)
             ->json();
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
         
        // print_r($pager);
 
-        if(@$_REQUEST['ajax']==1){
+        if(@$page==1){
             return view('movies.ajaxlist', compact('latest'));
         }
 

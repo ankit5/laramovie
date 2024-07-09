@@ -43,7 +43,7 @@ $(window).scroll(function() {
        if(s){
         url_post= "?s="+s+"&ajax=1&page="+appendNumber;
        }else{
-        url_post= "?ajax=1&page="+appendNumber;
+        url_post= document.URL+""+appendNumber+"/";
        }
     $('.loader2').show();
 
