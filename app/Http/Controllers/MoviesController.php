@@ -36,7 +36,7 @@ class MoviesController extends Controller
                 $pager = isset($latest['pager']) ? $latest['pager'] : [];
                 $latest = isset($latest['results']) ? $latest['results'] : [];
         
-                if(@$page==1){
+                if(@$page){
                     return view('movies.ajaxlist', compact('latest'));
                 }
         
@@ -125,7 +125,7 @@ class MoviesController extends Controller
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
 
-        if(@$page==1){
+        if(@$page){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -206,7 +206,7 @@ class MoviesController extends Controller
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
 
-        if(@$page==1){
+        if(@$page){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -242,7 +242,7 @@ class MoviesController extends Controller
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
 
-        if(@$page==1){
+        if(@$page){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -331,7 +331,7 @@ class MoviesController extends Controller
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
 
-        if(@$page==1){
+        if(@$page){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -371,7 +371,7 @@ class MoviesController extends Controller
             $pager = isset($latest['pager']) ? $latest['pager'] : [];
         $latest = isset($latest['results']) ? $latest['results'] : [];
 
-        if(@$page==1){
+        if(@$page){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -408,7 +408,7 @@ class MoviesController extends Controller
         
        // print_r($pager);
 
-        if(@$page==1){
+        if(@$page){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -446,7 +446,7 @@ class MoviesController extends Controller
         
        // print_r($pager);
 
-        if(@$page==1){
+        if(@$page){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -483,7 +483,7 @@ class MoviesController extends Controller
         
        // print_r($pager);
 
-        if(@$page==1){
+        if(@$page){
             return view('movies.ajaxlist', compact('latest'));
         }
 
@@ -520,7 +520,7 @@ class MoviesController extends Controller
         
        // print_r($pager);
 
-        if(@$page==1){
+        if(@$page){
             return view('movies.ajaxlist', compact('latest'));
         }
 
