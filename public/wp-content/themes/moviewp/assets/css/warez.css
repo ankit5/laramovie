@@ -265,7 +265,7 @@
 
 @media (max-width: 500px) {
   #selectPlayer {
-    top: -32px !important;
+    top: 36px !important;
   }
 
   #selectPlayer .selectAudio {

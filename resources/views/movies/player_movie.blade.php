@@ -12,7 +12,7 @@
 		<link rel="stylesheet" id="color-css" href="{{ asset('wp-content/themes/moviewp/assets/css/red.css') }}" type="text/css" media="all">
 		<link rel="stylesheet" as="style" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" onload="this.rel='stylesheet'">
         <link rel="preload" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin="">
-		<link rel="stylesheet" href="{{ asset('wp-content/themes/moviewp/assets/css/warez.css?ver=3.8.6') }}" type="text/css" media="all">
+		<link rel="stylesheet" href="{{ asset('wp-content/themes/moviewp/assets/css/warez.css?gfhds') }}" type="text/css" media="all">
         <style>body {background-color: #000; color:#fff;font-family: 'Jost', sans-serif !important;}</style>
 	</head>
 	<body inject_video_svd="true">
