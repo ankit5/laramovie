@@ -36,15 +36,13 @@ $(window).scroll(function() {
     
     var scroll_height = (isMobile)?250:200;
    // console.log($(document).height())
-     if (scrollLoad && $(window).scrollTop() >= $(document).height() - $(window).height() - 50) {
+     if (scrollLoad && $(window).scrollTop() >= $(document).height() - $(window).height() - 100) {
         scrollLoad = false;
         const urlParams = new URLSearchParams(window.location.search);
         const s = urlParams.get('s');
-       if(s){
-        url_post= "?s="+s+"&ajax=1&page="+appendNumber;
-       }else{
+       
         url_post= document.URL+"/"+appendNumber;
-       }
+       
     $('.loader2').show();
 
     $.ajax( {
