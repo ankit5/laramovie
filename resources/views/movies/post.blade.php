@@ -195,72 +195,17 @@ post-template-default single single-post postid-552 single-format-standard custo
       <section class="similar">
         <h4>You might also like..</h4>
         <ul>
-          <li id="post-70">
-            <a href="https://moviewp.com/me-myself-irene/">
-              <img class="lazy" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="https://image.tmdb.org/t/p/w220_and_h330_face/rvRrcbLbpn7UJGRH1JupgHOeJFq.jpg" alt="Me, Myself &#038; Irene">
-            </a>
-          </li>
-          <!-- #post-70 -->
-          <li id="post-534">
-            <a href="https://moviewp.com/the-green-mile/">
-              <img class="lazy" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="https://image.tmdb.org/t/p/w220_and_h330_face/o0lO84GI7qrG6XFvtsPOSV7CTNa.jpg" alt="The Green Mile">
-            </a>
-          </li>
-          <!-- #post-534 -->
-          <li id="post-151">
-            <a href="https://moviewp.com/rocky-v/">
-              <img class="lazy" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="https://image.tmdb.org/t/p/w220_and_h330_face/qCARerjCFZOEeLiVdomhwRYlDSn.jpg" alt="Rocky V">
-            </a>
-          </li>
-          <!-- #post-151 -->
-          <li id="post-260">
-            <a href="https://moviewp.com/godzilla-the-planet-eater/">
-              <img class="lazy" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="https://image.tmdb.org/t/p/w220_and_h330_face/fOA44BITFth0u4hMSOUgpK0kM6t.jpg" alt="Godzilla: The Planet Eater">
-            </a>
-          </li>
-          <!-- #post-260 -->
-          <li id="post-272">
-            <a href="https://moviewp.com/the-matrix-resurrections/">
-              <img class="lazy" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="https://image.tmdb.org/t/p/w220_and_h330_face/8c4a8kE7PizaGQQnditMmI1xbRp.jpg" alt="The Matrix Resurrections">
-            </a>
-          </li>
-          <!-- #post-272 -->
-          <li id="post-323">
-            <a href="https://moviewp.com/prey/">
-              <img class="lazy" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="https://image.tmdb.org/t/p/w220_and_h330_face/ujr5pztc1oitbe7ViMUOilFaJ7s.jpg" alt="Prey">
-            </a>
-          </li>
-          <!-- #post-323 -->
-          <li id="post-154">
-            <a href="https://moviewp.com/terminator-salvation/">
-              <img class="lazy" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="https://image.tmdb.org/t/p/w220_and_h330_face/gw6JhlekZgtKUFlDTezq3j5JEPK.jpg" alt="Terminator Salvation">
-            </a>
-          </li>
-          <!-- #post-154 -->
-          <li id="post-254">
-            <a href="https://moviewp.com/uncharted/">
-              <img class="lazy" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="https://image.tmdb.org/t/p/w220_and_h330_face/rJHC1RUORuUhtfNb4Npclx0xnOf.jpg" alt="Uncharted">
-            </a>
-          </li>
-          <!-- #post-254 -->
-          <li id="post-476">
-            <a href="https://moviewp.com/chupa/">
-              <img class="lazy" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="https://image.tmdb.org/t/p/w220_and_h330_face/ra3xm8KFAkwK0CdbPRkfYADJYTB.jpg" alt="Chupa">
-            </a>
-          </li>
-          <!-- #post-476 -->
-          <li id="post-187">
-            <a href="https://moviewp.com/minions/">
-              <img class="lazy" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="https://image.tmdb.org/t/p/w220_and_h330_face/vlOgaxUiMOA8sPDG9n3VhQabnEi.jpg" alt="Minions">
-            </a>
-          </li>
-          <!-- #post-187 -->
+        @foreach ($latest as $movie)
+                    <x-movie-post-similar :movie="$movie" />
+                @endforeach
+          
+          
         </ul>
       </section>
       <!-- .similar -->
-      <div id="disqus_thread"></div>
+      
     </div>
-    <div id="slideshow"></div>
+   
   </section>
 </article>
 <!-- #post-552 -->

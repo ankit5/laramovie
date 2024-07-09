@@ -601,7 +601,18 @@ class MoviesController extends Controller
         $meta['url']=URL::current();
         $meta['image']=$movie['field_image_urls'];
 
-        return view('movies.post', compact('meta','movie','years','genres'));
+        $similar = explode(' ',$movie['title']);
+
+$similar = ($similar[0]=='A' || $similar[0]=='The' || $similar[0]=='for')?$similar[1].' '.$similar[2]:$similar[0].' '.$similar[1];
+
+        $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
+        ->get(config('services.basic_auth.api_url').'api/films?title='.$similar)
+            ->json();
+           
+            $latest = isset($latest['results']) ? $latest['results'] : [];
+    
+
+        return view('movies.post', compact('meta','movie','years','genres','latest'));
     }
 
 }

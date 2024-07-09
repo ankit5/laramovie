@@ -47,7 +47,15 @@ $rand = 'h34kjf';
 <link rel="icon" href="{{ asset('wp-content/uploads/2023/01/cropped-fav-192x192.png') }}" sizes="192x192">
 <link rel="apple-touch-icon" href="{{ asset('wp-content/uploads/2023/01/cropped-fav-180x180.png') }}">
 <meta name="msapplication-TileImage" content="https://moviewp.com/wp-content/uploads/2023/01/cropped-fav-270x270.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSYQK9M61P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-DSYQK9M61P');
+</script>
 
 @yield('head')
 
