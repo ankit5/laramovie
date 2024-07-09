@@ -184,7 +184,7 @@ post-template-default single single-post postid-552 single-format-standard custo
           </li>
           @endif
           <li id="multiplayer">
-            <a class="blue" rel="modal" data-modal-type="iframe" href="{{ $meta['url'] }}?player_movie=1">
+            <a class="blue" rel="modal" data-modal-type="iframe" href="{{ $meta['url'] }}/server/">
               <i class="fa fa-window-restore"></i>
               <span>Watch & Download</span>
             </a>
