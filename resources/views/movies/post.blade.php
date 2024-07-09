@@ -194,13 +194,14 @@ post-template-default single single-post postid-552 single-format-standard custo
       </div>
       <section class="similar">
         <h4>You might also like..</h4>
-        <ul>
+        <div class="carousel" data-flickity="{ &quot;autoPlay&quot;: true, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
+
         @foreach ($latest as $movie)
-                    <x-movie-post-similar :movie="$movie" />
+                    <x-movie-post :movie="$movie" />
                 @endforeach
           
           
-        </ul>
+</div>
       </section>
       <!-- .similar -->
       
