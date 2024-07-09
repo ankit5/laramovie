@@ -57,7 +57,7 @@ class MoviesController extends Controller
                 $meta['og-title']='Search '.ucfirst($search).'|'.config('app.name');
                 $meta['canonical']=URL::current();
                 $meta['url']=URL::current();
-                $meta['image']=@$latest[0]['field_image_urls'];
+                $meta['image']=@@$latest[0]['field_image_urls'];
         
                 return view('movies.page', compact('meta','latest','years','genres','pager'));
         
@@ -102,7 +102,7 @@ class MoviesController extends Controller
         $meta['canonical']=URL::current();
         $meta['url']=URL::current();
         //$meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
-        $meta['image']=$latest[0]['field_image_urls'];
+        $meta['image']=@$latest[0]['field_image_urls'];
 
         return view('movies.front', compact('meta','latest','years','popularMovies','tvshows','bollywood','genres','pager'));
     }
@@ -146,7 +146,7 @@ class MoviesController extends Controller
         $meta['og-title']=@$tag_name.' Movies and Shows';
         $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=$latest[0]['field_image_urls'];
+        $meta['image']=@$latest[0]['field_image_urls'];
  
         $network =[];
         if($tag=='web-series'){
@@ -186,7 +186,7 @@ class MoviesController extends Controller
         $meta['og-title']=config('app.name').' Latest Uploaded Movies and Shows.';
         $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=$latest[0]['field_image_urls'];
+        $meta['image']=@$latest[0]['field_image_urls'];
 
         // $viewModel = new MoviesViewModel(
         //     $popularMovies,
@@ -227,7 +227,7 @@ class MoviesController extends Controller
         $meta['og-title']='Latter '.$letter.' Movies & Shows|'.config('app.name');
         $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=$latest[0]['field_image_urls'];
+        $meta['image']=@$latest[0]['field_image_urls'];
 
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
@@ -263,7 +263,7 @@ class MoviesController extends Controller
         $meta['og-title']=$collection.' Collections on '.config('app.name');
         $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=$latest[0]['field_image_urls'];
+        $meta['image']=@$latest[0]['field_image_urls'];
 
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
@@ -352,7 +352,7 @@ class MoviesController extends Controller
         $meta['og-title']='Latest Tv Shows and English Series';
         $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=$latest[0]['field_image_urls'];
+        $meta['image']=@$latest[0]['field_image_urls'];
 
         $network_english =[];
         
@@ -392,7 +392,7 @@ class MoviesController extends Controller
         $meta['og-title']=$year.' Movies and Shows free download |'.config('app.name');
         $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=$latest[0]['field_image_urls'];
+        $meta['image']=@$latest[0]['field_image_urls'];
 
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
@@ -429,7 +429,7 @@ class MoviesController extends Controller
         $meta['og-title']=$country.' Movies and Shows free download |'.config('app.name');
         $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=$latest[0]['field_image_urls'];
+        $meta['image']=@$latest[0]['field_image_urls'];
 
 
         return view('movies.page', compact('meta','latest','years','genres','pager'));
@@ -467,7 +467,7 @@ class MoviesController extends Controller
         $meta['og-title']=$actor.' Movies and Shows free download |'.config('app.name');
         $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=$latest[0]['field_image_urls'];
+        $meta['image']=@$latest[0]['field_image_urls'];
 
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
@@ -504,7 +504,7 @@ class MoviesController extends Controller
         $meta['og-title']=$director.' Movies and Shows free download |'.config('app.name');
         $meta['canonical']=URL::current();
         $meta['url']=URL::current();
-        $meta['image']=$latest[0]['field_image_urls'];
+        $meta['image']=@$latest[0]['field_image_urls'];
 
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
@@ -541,7 +541,7 @@ class MoviesController extends Controller
         $meta['og-title']='Movieflix';
         $meta['canonical']='Movieflix';
         $meta['url']=URL::current();
-        $meta['image']=$latest[0]['field_image_urls'];
+        $meta['image']=@$latest[0]['field_image_urls'];
 
         return view('movies.page', compact('meta','latest','years','genres','pager'));
     }
