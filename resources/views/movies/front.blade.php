@@ -15,6 +15,16 @@ home blog custom overview frontpage @endsection
 @include('templates.header-secondery')
 <section id="content" class="inner-container" style="padding-bottom: 30px!important;">
 <div class="item-container">
+
+<div class="app-heading">
+<div class="text">Popular Movies</div>
+</div>
+<div class="carousel" data-flickity="{ &quot;autoPlay&quot;: true, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
+                @foreach ($popularMovies as $movie)
+                    <x-movie-post :movie="$movie" />
+                @endforeach
+</div>
+
 <div class="app-heading">
 <div class="text">Latest Series</div>
 <a href="/tv-series" class="all">View All</a>
@@ -27,14 +37,7 @@ home blog custom overview frontpage @endsection
 
 </div>
 
-<div class="app-heading">
-<div class="text">Popular Movies</div>
-</div>
-<div class="carousel" data-flickity="{ &quot;autoPlay&quot;: true, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
-                @foreach ($popularMovies as $movie)
-                    <x-movie-post :movie="$movie" />
-                @endforeach
-</div>
+
 
 <div class="app-heading">
 <div class="text">Latest Movies</div>
@@ -54,6 +57,16 @@ home blog custom overview frontpage @endsection
 <div class="carousel" data-flickity="{ &quot;autoPlay&quot;: true, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
 
                 @foreach ($bollywood as $movie)
+                    <x-movie-post :movie="$movie" />
+                @endforeach
+</div>
+
+<div class="app-heading">
+<div class="text">Marvel Universe</div>
+</div>
+<div class="carousel" data-flickity="{ &quot;autoPlay&quot;: true, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
+
+                @foreach ($marvel as $movie)
                     <x-movie-post :movie="$movie" />
                 @endforeach
 </div>

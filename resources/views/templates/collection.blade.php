@@ -136,7 +136,7 @@
 				</a>
 			</div><!-- #post-2526 -->	
 						<div id="post-2300" class="carousel-cell post-558 post type-post status-publish format-standard hentry">
-				<a href="/collection/r-i-p-d-collection" rel="bookmark">
+				<a href="/collection/r.i.p.d-d-collection" rel="bookmark">
 					<span class="item-tv">1</span>
 					<img class="carousel-cell-image-tv" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-flickity-lazyload="//image.tmdb.org/t/p/w780/3T5sF3dyECdfXNSXcq3RsDhk6yu.jpg">
 				</a>
@@ -172,19 +172,19 @@
 				</a>
 			</div><!-- #post-2282 -->	
 						<div id="post-1579" class="carousel-cell post-558 post type-post status-publish format-standard hentry">
-				<a href="/collection/the-amazing-spider-man-collection" rel="bookmark">
+				<a href="/collection/amazing-spider-man-collection" rel="bookmark">
 					<span class="item-tv">2</span>
 					<img class="carousel-cell-image-tv" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-flickity-lazyload="//image.tmdb.org/t/p/w780/68CqVxCH14br7EHFu67peDDjZX9.jpg">
 				</a>
 			</div><!-- #post-1579 -->	
 						<div id="post-1528" class="carousel-cell post-558 post type-post status-publish format-standard hentry">
-				<a href="/collection/the-avengers-collection" rel="bookmark">
+				<a href="/collection/avengers-collection" rel="bookmark">
 					<span class="item-tv">4</span>
 					<img class="carousel-cell-image-tv" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-flickity-lazyload="//image.tmdb.org/t/p/w780/yFSIUVTCvgYrpalUktulvk3Gi5Y.jpg">
 				</a>
 			</div><!-- #post-1528 -->	
 						<div id="post-1425" class="carousel-cell post-558 post type-post status-publish format-standard hentry">
-				<a href="/collection/the-batman-collection" rel="bookmark">
+				<a href="/collection/batman-collection" rel="bookmark">
 					<span class="item-tv">1</span>
 					<img class="carousel-cell-image-tv" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-flickity-lazyload="//image.tmdb.org/t/p/w780/rTCJB5axQ8XOmGbpJBsiHkhKq14.jpg">
 				</a>
@@ -196,19 +196,19 @@
 				</a>
 			</div><!-- #post-2499 -->	
 						<div id="post-2673" class="carousel-cell post-558 post type-post status-publish format-standard hentry">
-				<a href="/collection/the-exorcist-collection" rel="bookmark">
+				<a href="/collection/exorcist-collection" rel="bookmark">
 					<span class="item-tv">3</span>
 					<img class="carousel-cell-image-tv" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-flickity-lazyload="//image.tmdb.org/t/p/w780/yKfTl0H8pMORzPLho3kz69yWwP0.jpg">
 				</a>
 			</div><!-- #post-2673 -->	
 						<div id="post-3027" class="carousel-cell post-558 post type-post status-publish format-standard hentry">
-				<a href="/collection/the-fast-and-the-furious-collection" rel="bookmark">
+				<a href="/collection/fast-and-the-furious-collection" rel="bookmark">
 					<span class="item-tv">7</span>
 					<img class="carousel-cell-image-tv" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-flickity-lazyload="//image.tmdb.org/t/p/w780/rKKSOVv6iU3nULrKQmd9uEx9gez.jpg">
 				</a>
 			</div><!-- #post-3027 -->	
 						<div id="post-1276" class="carousel-cell post-558 post type-post status-publish format-standard hentry">
-				<a href="/collection/the-godfather-collection" rel="bookmark">
+				<a href="/collection/godfather-collection" rel="bookmark">
 					<span class="item-tv">3</span>
 					<img class="carousel-cell-image-tv" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-flickity-lazyload="//image.tmdb.org/t/p/w780/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg">
 				</a>
@@ -232,7 +232,7 @@
 				</a>
 			</div><!-- #post-716 -->	
 						<div id="post-1341" class="carousel-cell post-558 post type-post status-publish format-standard hentry">
-				<a href="/collection/the-terminator-collection" rel="bookmark">
+				<a href="/collection/terminator-collection" rel="bookmark">
 					<span class="item-tv">6</span>
 					<img class="carousel-cell-image-tv" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-flickity-lazyload="//image.tmdb.org/t/p/w780/kpZxdNsAV7qTdTLwKM5NLqa7GEo.jpg">
 				</a>

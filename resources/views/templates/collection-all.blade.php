@@ -16,7 +16,7 @@
 				</a>
 			</div><!-- #post-2534 -->	
 						<div id="post-2611" class="carousel-cell post-558 post item status-publish format-standard hentry">
-				<a href="/collection/avp-collection" rel="bookmark">
+				<a href="/collection/alien-vs-predator-collection" rel="bookmark">
 					<span class="item-tv">2</span>
 					<img class="carousel-cell-image-new lazyfast" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="//image.tmdb.org/t/p/w780/onE2OosgiHdjYXPoAD62sf0XsVa.jpg">
 				</a>
@@ -136,7 +136,7 @@
 				</a>
 			</div><!-- #post-2526 -->	
 						<div id="post-2300" class="carousel-cell post-558 post item status-publish format-standard hentry">
-				<a href="/collection/r-i-p-d-collection" rel="bookmark">
+				<a href="/collection/r.i.p.d-collection" rel="bookmark">
 					<span class="item-tv">1</span>
 					<img class="carousel-cell-image-new lazyfast" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="//image.tmdb.org/t/p/w780/3T5sF3dyECdfXNSXcq3RsDhk6yu.jpg">
 				</a>
@@ -184,31 +184,31 @@
 				</a>
 			</div><!-- #post-1528 -->	
 						<div id="post-1425" class="carousel-cell post-558 post item status-publish format-standard hentry">
-				<a href="/collection/the-batman-collection" rel="bookmark">
+				<a href="/collection/batman-collection" rel="bookmark">
 					<span class="item-tv">1</span>
 					<img class="carousel-cell-image-new lazyfast" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="//image.tmdb.org/t/p/w780/rTCJB5axQ8XOmGbpJBsiHkhKq14.jpg">
 				</a>
 			</div><!-- #post-1425 -->	
 						<div id="post-2499" class="carousel-cell post-558 post item status-publish format-standard hentry">
-				<a href="/collection/the-dark-knight-collection" rel="bookmark">
+				<a href="/collection/dark-knight-collection" rel="bookmark">
 					<span class="item-tv">3</span>
 					<img class="carousel-cell-image-new lazyfast" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="//image.tmdb.org/t/p/w780/ogyw5LTmL53dVxsppcy8Dlm30Fu.jpg">
 				</a>
 			</div><!-- #post-2499 -->	
 						<div id="post-2673" class="carousel-cell post-558 post item status-publish format-standard hentry">
-				<a href="/collection/the-exorcist-collection" rel="bookmark">
+				<a href="/collection/exorcist-collection" rel="bookmark">
 					<span class="item-tv">3</span>
 					<img class="carousel-cell-image-new lazyfast" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="//image.tmdb.org/t/p/w780/yKfTl0H8pMORzPLho3kz69yWwP0.jpg">
 				</a>
 			</div><!-- #post-2673 -->	
 						<div id="post-3027" class="carousel-cell post-558 post item status-publish format-standard hentry">
-				<a href="/collection/the-fast-and-the-furious-collection" rel="bookmark">
+				<a href="/collection/fast-and-the-furious-collection" rel="bookmark">
 					<span class="item-tv">7</span>
 					<img class="carousel-cell-image-new lazyfast" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="//image.tmdb.org/t/p/w780/rKKSOVv6iU3nULrKQmd9uEx9gez.jpg">
 				</a>
 			</div><!-- #post-3027 -->	
 						<div id="post-1276" class="carousel-cell post-558 post item status-publish format-standard hentry">
-				<a href="/collection/the-godfather-collection" rel="bookmark">
+				<a href="/collection/godfather-collection" rel="bookmark">
 					<span class="item-tv">3</span>
 					<img class="carousel-cell-image-new lazyfast" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="//image.tmdb.org/t/p/w780/zqV8MGXfpLZiFVObLxpAI7wWonJ.jpg">
 				</a>
@@ -220,19 +220,19 @@
 				</a>
 			</div><!-- #post-607 -->	
 						<div id="post-2009" class="carousel-cell post-558 post item status-publish format-standard hentry">
-				<a href="/collection/the-matrix-collection" rel="bookmark">
+				<a href="/collection/matrix-collection" rel="bookmark">
 					<span class="item-tv">4</span>
 					<img class="carousel-cell-image-new lazyfast" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="//image.tmdb.org/t/p/w780/bV9qTVHTVf0gkW0j7p7M0ILD4pG.jpg">
 				</a>
 			</div><!-- #post-2009 -->	
 						<div id="post-716" class="carousel-cell post-558 post item status-publish format-standard hentry">
-				<a href="/collection/the-mummy-collection" rel="bookmark">
+				<a href="/collection/mummy-collection" rel="bookmark">
 					<span class="item-tv">3</span>
 					<img class="carousel-cell-image-new lazyfast" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="//image.tmdb.org/t/p/w780/x5ZQsM90h4jmvDelgbCwPjcOn1s.jpg">
 				</a>
 			</div><!-- #post-716 -->	
 						<div id="post-1341" class="carousel-cell post-558 post item status-publish format-standard hentry">
-				<a href="/collection/the-terminator-collection" rel="bookmark">
+				<a href="/collection/terminator-collection" rel="bookmark">
 					<span class="item-tv">6</span>
 					<img class="carousel-cell-image-new lazyfast" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA4AAAAv20BSAAcQEf0PRET/Aw==" data-src="//image.tmdb.org/t/p/w780/kpZxdNsAV7qTdTLwKM5NLqa7GEo.jpg">
 				</a>

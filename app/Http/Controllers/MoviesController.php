@@ -82,6 +82,10 @@ class MoviesController extends Controller
         ->get(config('services.basic_auth.api_url').'api/featured-movies')
         ->json();
 
+        $marvel = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
+        ->get(config('services.basic_auth.api_url').'api/marvel-movies')
+        ->json();
+
         $genresResponse = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
         ->get(config('services.basic_auth.api_url').'api/tags')
         ->json();
@@ -94,6 +98,7 @@ class MoviesController extends Controller
         $popularMovies = isset($popularMovies['results']) ? $popularMovies['results'] : [];
         $tvshows = isset($tvshows['results']) ? $tvshows['results'] : [];
         $bollywood = isset($bollywood['results']) ? $bollywood['results'] : [];
+        $marvel = isset($marvel['results']) ? $marvel['results'] : [];
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
         $meta['meta-title']=config('app.name').' - Watch Online And Download Free Movies & Shows, Bollywood, Hollywood, Netflix, Hindi Dubbed';
@@ -104,7 +109,7 @@ class MoviesController extends Controller
         //$meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
         $meta['image']=@$latest[0]['field_image_urls'];
 
-        return view('movies.front', compact('meta','latest','years','popularMovies','tvshows','bollywood','genres','pager'));
+        return view('movies.front', compact('meta','marvel','latest','years','popularMovies','tvshows','bollywood','genres','pager'));
     }
 
     public function tag($tag,$page='')
