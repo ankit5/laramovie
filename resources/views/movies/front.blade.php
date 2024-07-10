@@ -47,8 +47,9 @@ home blog custom overview frontpage @endsection
                 @endforeach
 </div>
 
-<div class="loader2"></div>
+
 
 </div>
+<div class="loader2"></div>
 </section>
 @endsection
