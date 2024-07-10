@@ -63,28 +63,28 @@ class MoviesController extends Controller
         
         }
 
-    public function index()
+    public function index($page='')
     {   
-        
+        if($page==3)
+      {
+          return '';
+      }
 
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
         ->get(config('services.basic_auth.api_url').'api/films')
             ->json();
         
 
-        $tvshows = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/films?field_url_value=series&tag_id_not[]=106')
-        ->json();
-        $bollywood = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/films?tag_id=86')
-        ->json();
+      
         $popularMovies = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/featured-movies')
+        ->get(config('services.basic_auth.api_url').'api/featured-movies?block_id=4')
         ->json();
 
-        $marvel = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
-        ->get(config('services.basic_auth.api_url').'api/marvel-movies')
+        $popularSeries = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
+        ->get(config('services.basic_auth.api_url').'api/featured-movies?block_id=18')
         ->json();
+
+        
 
         $genresResponse = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
         ->get(config('services.basic_auth.api_url').'api/tags')
@@ -93,12 +93,46 @@ class MoviesController extends Controller
         $years = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
         ->get(config('services.basic_auth.api_url').'api/years')
         ->json();
+
         $pager = isset($latest['pager']) ? $latest['pager'] : [];
+    if(@$page==1){
+            $tvshows = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
+      ->get(config('services.basic_auth.api_url').'api/films?field_url_value=series&tag_id_not[]=106')
+      ->json();
+      $bollywood = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
+      ->get(config('services.basic_auth.api_url').'api/films?tag_id=86')
+      ->json();
+      $marvel = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
+        ->get(config('services.basic_auth.api_url').'api/marvel-movies')
+        ->json();
+      $tvshows = isset($tvshows['results']) ? $tvshows['results'] : [];
+      $bollywood = isset($bollywood['results']) ? $bollywood['results'] : [];
+      $marvel = isset($marvel['results']) ? $marvel['results'] : [];
+      $page[0]=1;
+          return view('movies.front-load', compact('marvel','tvshows','bollywood','page'));
+      }
+
+      if(@$page==2){
+        $hindiDubbed = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
+  ->get(config('services.basic_auth.api_url').'api/films?tag_id=80&tag_id_not[]=83')
+  ->json();
+  $southDubbed = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
+  ->get(config('services.basic_auth.api_url').'api/films?tag_id=83')
+  ->json();
+  $hotSeries = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
+    ->get(config('services.basic_auth.api_url').'api/films?tag_id=106')
+    ->json();
+  $hindiDubbed = isset($hindiDubbed['results']) ? $hindiDubbed['results'] : [];
+  $southDubbed = isset($southDubbed['results']) ? $southDubbed['results'] : [];
+  $hotSeries = isset($hotSeries['results']) ? $hotSeries['results'] : [];
+  $page[0]=2;
+      return view('movies.front-load', compact('hindiDubbed','southDubbed','hotSeries','page'));
+  }
+      
         $latest = isset($latest['results']) ? $latest['results'] : [];
         $popularMovies = isset($popularMovies['results']) ? $popularMovies['results'] : [];
-        $tvshows = isset($tvshows['results']) ? $tvshows['results'] : [];
-        $bollywood = isset($bollywood['results']) ? $bollywood['results'] : [];
-        $marvel = isset($marvel['results']) ? $marvel['results'] : [];
+        $popularSeries = isset($popularSeries['results']) ? $popularSeries['results'] : [];
+       
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
         $meta['meta-title']=config('app.name').' - Watch Online And Download Free Movies & Shows, Bollywood, Hollywood, Netflix, Hindi Dubbed';
@@ -109,7 +143,9 @@ class MoviesController extends Controller
         //$meta['image']=asset('wp-content/uploads/2023/01/moviewp_3.8.8.jpg');
         $meta['image']=@$latest[0]['field_image_urls'];
 
-        return view('movies.front', compact('meta','marvel','latest','years','popularMovies','tvshows','bollywood','genres','pager'));
+       
+
+        return view('movies.front', compact('meta','popularSeries','latest','years','popularMovies','genres','pager'));
     }
 
     public function tag($tag,$page='')

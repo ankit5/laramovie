@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 
 // Movies
 Route::middleware('page-cache')->get('/', 'MoviesController@index')->name('movies.index');
+Route::middleware('page-cache')->get('/{page}', 'MoviesController@index')->name('movies.index');
 
 Route::middleware('page-cache')->get('/movies', 'MoviesController@movies')->name('movies.movies');
 Route::middleware('page-cache')->get('/movies/{page}', 'MoviesController@movies')->name('movies.movies');

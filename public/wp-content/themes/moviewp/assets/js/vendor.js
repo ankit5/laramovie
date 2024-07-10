@@ -40,9 +40,10 @@ $(window).scroll(function() {
         scrollLoad = false;
         const urlParams = new URLSearchParams(window.location.search);
         const s = urlParams.get('s');
-       
-        url_post= document.URL+"/"+appendNumber;
-       
+        var doc_url = document.URL.replace(/\/$/, "");
+        url_post= doc_url+"/"+appendNumber;
+        console.log(doc_url);
+        var isRoot =/^(\/|\/index\.php|\/index\.aspx)$/i.test(location.pathname);
     $('.loader2').show();
 
     $.ajax( {
@@ -58,9 +59,13 @@ $(window).scroll(function() {
        //var rawDoc= $(data[1].data).find('.items').html();
        var rawDoc = data[1].data;
        let doc = document.createElement('html');
-       //console.log(data);
+       
        doc.innerHTML = data;
        let div1 = doc.querySelectorAll('.item');
+       if(isRoot){
+       // console.log(data);
+        $(".loadmore").append(data);
+       }else{
        div1.forEach(p => {
         $(".loadmore").append(p);
         $(p).css({
@@ -68,6 +73,7 @@ $(window).scroll(function() {
             transform: 'scale(1)',
           });
        });
+      }
        
        $('.loader2').hide(); 
        new LazyLoad({

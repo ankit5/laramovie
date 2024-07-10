@@ -14,7 +14,7 @@ home blog custom overview frontpage @endsection
 @section('content')
 @include('templates.header-secondery')
 <section id="content" class="inner-container" style="padding-bottom: 30px!important;">
-<div class="item-container">
+<div class="item-container loadmore">
 
 <div class="app-heading">
 <div class="text">Popular Movies</div>
@@ -25,18 +25,15 @@ home blog custom overview frontpage @endsection
                 @endforeach
 </div>
 
+
 <div class="app-heading">
-<div class="text">Latest Series</div>
-<a href="/tv-series" class="all">View All</a>
+<div class="text">Popular Web Series</div>
 </div>
 <div class="carousel" data-flickity="{ &quot;autoPlay&quot;: true, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
-			
-	@foreach ($tvshows as $movie)
+                @foreach ($popularSeries as $movie)
                     <x-movie-post :movie="$movie" />
                 @endforeach
-
 </div>
-
 
 
 <div class="app-heading">
@@ -50,29 +47,7 @@ home blog custom overview frontpage @endsection
                 @endforeach
 </div>
 
-<div class="app-heading">
-<div class="text">Bollywood Movies</div>
-<a href="/genre/bollywood" class="all">View All</a>
-</div>
-<div class="carousel" data-flickity="{ &quot;autoPlay&quot;: true, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
-
-                @foreach ($bollywood as $movie)
-                    <x-movie-post :movie="$movie" />
-                @endforeach
-</div>
-
-<div class="app-heading">
-<div class="text">Marvel Universe</div>
-</div>
-<div class="carousel" data-flickity="{ &quot;autoPlay&quot;: true, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
-
-                @foreach ($marvel as $movie)
-                    <x-movie-post :movie="$movie" />
-                @endforeach
-</div>
-
-@include('templates.collection')
-
+<div class="loader2"></div>
 
 </div>
 </section>
