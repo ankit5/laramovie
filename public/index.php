@@ -1,5 +1,9 @@
 <?php
-
+ if(@$_REQUEST['s']){
+    $_REQUEST['s'] = str_replace(" ",'-',$_REQUEST['s']);
+    header('Location:/search/'.$_REQUEST['s']);
+    exit;
+}
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
