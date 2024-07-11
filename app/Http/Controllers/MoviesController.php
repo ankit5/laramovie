@@ -20,7 +20,7 @@ class MoviesController extends Controller
         // exit;
         if(@$_REQUEST['s']){
             $_REQUEST['s'] = str_replace(" ",'-',$_REQUEST['s']);
-            header('Location:/search/'.$_REQUEST['s'].'/');
+            header('Location:/search/'.$_REQUEST['s']);
             exit;
         }
     }
