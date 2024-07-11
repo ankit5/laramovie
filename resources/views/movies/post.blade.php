@@ -59,7 +59,7 @@ post-template-default single single-post postid-552 single-format-standard custo
           <meta itemprop="bestRating" content="10" />
           <meta itemprop="worstRating" content="1" />
           <meta itemprop="ratingValue" content="{{ @$rate }}" />
-          <meta itemprop="ratingCount" content="35" />
+          <meta itemprop="ratingCount" content="{{ $movie['nid'] }}" />
         </div>
         <div class="movie-data">
           <div class="details">
