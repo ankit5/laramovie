@@ -365,8 +365,7 @@ class MoviesController extends Controller
 
     public function series($page='')
     {  
-        print "asd";
-        exit;
+       
         
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
         ->get(config('services.basic_auth.api_url').'api/allfilms?field_url_value=series&tag_id_not[]=106&page='.@$page)
