@@ -363,7 +363,7 @@ class MoviesController extends Controller
 
 
 
-    public function series($page='')
+    public function englishseries($page='')
     {   
         
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
