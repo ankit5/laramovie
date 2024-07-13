@@ -30,9 +30,14 @@
 							<div class="s">Watch and Download</div>
 						</div>
 						@endforeach
-						@endif
-
-						@if(@$movie['field_download_url'][0])
+						@elseif(@$movie['field_download_url'][1])
+						@foreach($movie['field_download_url'] as $key=>$value)
+						<div class="buttonLoadHost" data-load-id="{{ $movie['nid'] }}" data-load-tab="{{ $key }}"><i class="fa fa-play-circle"></i>
+							<div class="t">Part {{ $key+1 }}</div>
+							<div class="s">Watch and Download</div>
+						</div>
+						@endforeach
+						@elseif(@$movie['field_download_url'][0])
 						@foreach($movie['field_download_url'] as $key=>$value)
 						<div class="buttonLoadHost" data-load-id="{{ $movie['nid'] }}" data-load-tab="{{ $key }}"><i class="fa fa-play-circle"></i>
 							<div class="t">Server {{ $key+1 }}</div>
@@ -40,12 +45,11 @@
 						</div>
 						@endforeach
 						@endif
-
-						@if(@$movie['field_download_url'][1])
-						@foreach($movie['field_download_url'] as $key=>$value)
+						@elseif(@$movie['field_player'][0])
+						@foreach($movie['field_player'] as $key=>$value)
 						<div class="buttonLoadHost" data-load-id="{{ $movie['nid'] }}" data-load-tab="{{ $key }}"><i class="fa fa-play-circle"></i>
-							<div class="t">Part {{ $key+1 }}</div>
-							<div class="s">Watch and Download</div>
+							<div class="t">Server {{ $key+1 }}</div>
+							<div class="s">Watch Now.</div>
 						</div>
 						@endforeach
 						@endif
