@@ -44,7 +44,6 @@
 							<div class="s">Watch and Download</div>
 						</div>
 						@endforeach
-						@endif
 						@elseif(@$movie['field_player'][0])
 						@foreach($movie['field_player'] as $key=>$value)
 						<div class="buttonLoadHost" data-load-id="{{ $movie['nid'] }}" data-load-tab="{{ $key }}"><i class="fa fa-play-circle"></i>
