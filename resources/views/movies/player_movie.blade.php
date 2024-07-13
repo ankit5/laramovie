@@ -45,7 +45,7 @@
 						</div>
 						@endforeach
 						@elseif(@$movie['field_player'][0])
-						<div class="buttonLoadHost" data-load-id="{{ $movie['nid'] }}" data-load-tab="{{ $key }}"><i class="fa fa-play-circle"></i>
+						<div class="buttonLoadHost" data-load-id="{{ $movie['nid'] }}" data-load-tab="1"><i class="fa fa-play-circle"></i>
 							<div class="t">Server 1</div>
 							<div class="s">Watch Now.</div>
 						</div>
