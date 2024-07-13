@@ -44,6 +44,9 @@ $(window).scroll(function() {
         url_post= doc_url+"/"+appendNumber;
         console.log(doc_url);
         var isRoot =/^(\/|\/index\.php|\/index\.aspx)$/i.test(location.pathname);
+       if(isRoot){
+        url_post= doc_url+"/front/"+appendNumber;
+       }
     $('.loader2').show();
 
     $.ajax( {
