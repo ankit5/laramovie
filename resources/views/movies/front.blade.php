@@ -19,7 +19,7 @@ home blog custom overview frontpage @endsection
 <div class="app-heading">
 <div class="text">Popular Movies</div>
 </div>
-<div class="carousel" data-flickity="{ &quot;autoPlay&quot;: true, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
+<div class="carousel" data-flickity="{ &quot;autoPlay&quot;: false, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
                 @foreach ($popularMovies as $movie)
                     <x-movie-post :movie="$movie" />
                 @endforeach
@@ -29,7 +29,7 @@ home blog custom overview frontpage @endsection
 <div class="app-heading">
 <div class="text">Popular Web Series</div>
 </div>
-<div class="carousel" data-flickity="{ &quot;autoPlay&quot;: true, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
+<div class="carousel" data-flickity="{ &quot;autoPlay&quot;: false, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
                 @foreach ($popularSeries as $movie)
                     <x-movie-post :movie="$movie" />
                 @endforeach
@@ -40,15 +40,9 @@ home blog custom overview frontpage @endsection
 <div class="text">Latest Movies</div>
 <a href="/movies" class="all">View All</a>
 </div>
-<div class="carousel" data-flickity="{ &quot;autoPlay&quot;: true, &quot;wrapAround&quot;: true, &quot;resize&quot;: true, &quot;prevNextButtons&quot;: true, &quot;pageDots&quot;: false, &quot;lazyLoad&quot;: true, &quot;lazyLoad&quot;: 12, &quot;cellAlign&quot;: &quot;left&quot; }">
-
-                @foreach ($latest as $movie)
+ @foreach ($latest as $movie)
                     <x-movie-post :movie="$movie" />
                 @endforeach
-</div>
-
-
-
 </div>
 <div class="loader2"></div>
 </section>
