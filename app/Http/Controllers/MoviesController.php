@@ -73,6 +73,9 @@ class MoviesController extends Controller
         $latest = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
         ->get(config('services.basic_auth.api_url').'api/allfilms')
             ->json();
+
+            print_r($latest);
+            exit;
         
 
       
@@ -540,10 +543,10 @@ class MoviesController extends Controller
        // $latest = isset($latest['results']) ? $latest['results'] : [];
         $genres = isset($genresResponse['results']) ? $genresResponse['results'] : [];
         $years = isset($years['results']) ? $years['results'] : [];
-        $meta['meta-title']=$director.' Movies|'.config('app.name');
+        $meta['meta-title']='Watch '.$director.' movies on '.config('app.name');
         $meta['title']=$director.' Movies';
         $meta['description']=$director.' Movies Watch Online and Download Free Streaming now';
-        $meta['og-title']=$director.' Movies free download |'.config('app.name');
+        $meta['og-title']='Watch '.$director.' movies on '.config('app.name');
         $meta['canonical']=URL::current();
         $meta['url']=URL::current();
         $meta['image']=@$latest[0]['field_image_urls'];
