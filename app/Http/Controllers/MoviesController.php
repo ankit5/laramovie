@@ -74,9 +74,7 @@ class MoviesController extends Controller
         ->get(config('services.basic_auth.api_url').'api/allfilms')
             ->json();
 
-            print_r($latest);
-            exit;
-        
+         
 
       
         $popularMovies = Http::withBasicAuth(config('services.basic_auth.user'), config('services.basic_auth.pwd'))
