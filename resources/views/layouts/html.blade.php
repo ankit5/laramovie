@@ -5,12 +5,16 @@
 
 	<!-- This site is optimized with the Yoast SEO plugin v22.5 - https://yoast.com/wordpress/plugins/seo/ -->
 	<title>{{ ucfirst($meta['meta-title']) }}</title>
-	<meta name="description" content="{{ $meta['description'] }}">
+  @if(@$meta['description'])
+  <meta name="description" content="{{ $meta['description'] }}">
+  @endif
 	<link rel="canonical" href="{{ $meta['canonical'] }}">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="{{ ucfirst($meta['og-title']) }}">
+  @if(@$meta['description'])
 	<meta property="og:description" content="{{ $meta['description'] }}">
+  @endif
 	<meta property="og:url" content="{{ $meta['url'] }}">
 	<meta property="og:site_name" content="moviesFlix">
 	<meta property="og:image" content="{{ @$meta['image'] }}">

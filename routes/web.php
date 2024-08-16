@@ -5,21 +5,29 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('page-cache')->get('/', 'MoviesController@index')->name('movies.index');
 Route::middleware('page-cache')->get('/front/{page}', 'MoviesController@index')->name('movies.index');
 
-Route::middleware('page-cache')->get('/movies', 'MoviesController@movies')->name('movies.movies');
-Route::middleware('page-cache')->get('/movies/{page}', 'MoviesController@movies')->name('movies.movies');
+// Route::middleware('page-cache')->get('/', 'MoviesControllerNew@index')->name('movies.index');
+// Route::middleware('page-cache')->get('/page/{page}', 'MoviesControllerNew@index')->name('movies.index');
+
+// Route::middleware('page-cache')->get('/views/ajax', 'MoviesControllerNew@viewsajax')->name('movies.viewsajax');
+
+// Route::middleware('page-cache')->get('/engine/ajax/custom', 'MoviesControllerNew@ajaxcustom')->name('movies.ajaxcustom');
+
+
+Route::middleware('page-cache')->get('/films', 'MoviesController@movies')->name('movies.movies');
+Route::middleware('page-cache')->get('/films/{page}', 'MoviesController@movies')->name('movies.movies');
 
 Route::get('/search', 'MoviesController@search2')->name('movies.search2');
 Route::middleware('page-cache')->get('/search/{search}', 'MoviesController@search')->name('movies.search');
 Route::middleware('page-cache')->get('/search/{search}/{page}', 'MoviesController@search')->name('movies.search3');
 
-Route::middleware('page-cache')->get('/tv-series', 'MoviesController@series')->name('movies.series');
-Route::middleware('page-cache')->get('/tv-series/{page}', 'MoviesController@series')->name('movies.series');
+Route::middleware('page-cache')->get('/series', 'MoviesController@series')->name('movies.series');
+Route::middleware('page-cache')->get('/series/{page}', 'MoviesController@series')->name('movies.series');
 
 Route::middleware('page-cache')->get('/show/{id}', 'MoviesController@show')->name('movies.show');
 Route::middleware('page-cache')->get('/show/{id}/{player_movie}', 'MoviesController@show')->name('movies.show');
 
-Route::middleware('page-cache')->get('/years/{year}', 'MoviesController@year')->name('movies.year');
-Route::middleware('page-cache')->get('/years/{year}/{page}', 'MoviesController@year')->name('movies.year');
+Route::middleware('page-cache')->get('/release-year/{year}', 'MoviesController@year')->name('movies.year');
+Route::middleware('page-cache')->get('/release-year/{year}/{page}', 'MoviesController@year')->name('movies.year');
 
 Route::middleware('page-cache')->get('/country/{country}', 'MoviesController@country')->name('movies.country');
 Route::middleware('page-cache')->get('/country/{country}/{page}', 'MoviesController@country')->name('movies.country');

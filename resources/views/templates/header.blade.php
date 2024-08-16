@@ -4,7 +4,7 @@
 			<span class="menu-icon"></span>
 			<span class="menu-icon-text">Menu</span>
 		</div>
-<h1 class="site-title"><a href="/" rel="home" class="logo txt">movies<span>Flix</span></a></h1>									
+<h1 class="site-title"><a href="/" rel="home" class="logo txt"><span>HD</span>MOVIE<span>2</span></a></h1>									
 		
 	</div>
 </header>

@@ -201,7 +201,6 @@ ul {
 }
 
 #slogan {
-    text-transform: uppercase;
     float: right;
     color: #cfd3e0;
     font-size: 13px;
@@ -466,7 +465,7 @@ ul {
 }
 
 #main #main-header .logo.txt span {
-    color: #e50914;
+    color: #ffc100;
 }
 
 #main #main-header .main-nav {
@@ -2852,7 +2851,6 @@ a#videoplayer1.blue {
 }
 
 #main #main-header .logo {
-    width: 139px;
     height: 34px;
     background: url();
     text-indent: -9999px;
@@ -4811,9 +4809,6 @@ a#cls_btn > img {
     .tv-details-episodes-info {
         margin-top: 0;
     }
-}
-
-@media (max-width: 380px) {
     #main #header-secondary {
         height: 180px;
         padding: 10px 0;
@@ -4845,6 +4840,10 @@ a#cls_btn > img {
         left: 0;
     }
 
+}
+
+@media (max-width: 380px) {
+   
     #content {
         margin-top: 230px;
     }
