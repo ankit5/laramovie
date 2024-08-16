@@ -1,6 +1,5 @@
 @php
     $url = ltrim($movie['view_node'], '/');
-    $url = str_replace("-watch-online-full-movie","-download-full-movie-and-wacth-online",$url);
 @endphp
 <li id="post-70">
             <a href="{{ $url }}">

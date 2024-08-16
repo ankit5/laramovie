@@ -1,6 +1,5 @@
 @php
     $url = ltrim($movie['view_node'], '/');
-    $url = str_replace("-watch-online-full-movie","-download-full-movie-and-wacth-online",$url);
     $rating = explode("|",@$movie['field_metadata'])
 @endphp
 <div id="post-553" class="carousel-cell item normal front post-553 post type-post status-publish">
