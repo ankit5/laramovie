@@ -50,7 +50,7 @@ swipercall('front-latest-block-4','front_latest','block_4');
 </div>
 
 <header><h2>Latest English Series</h2> 
-<span><a href="/tv-series" class="see-all">View more »</a></span>
+<span><a href="/series" class="see-all">View more »</a></span>
 </header>
 <div class="swiper horizontal_scroll_swiper">
          <div class="items normal swiper-wrapper">      
