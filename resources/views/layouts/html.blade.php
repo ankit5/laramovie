@@ -50,7 +50,6 @@ $rand = 'h34fsfgjf3';
 <link rel="icon" href="{{ asset('wp-content/uploads/2023/01/cropped-fav-32x32.png') }}" sizes="32x32">
 <link rel="icon" href="{{ asset('wp-content/uploads/2023/01/cropped-fav-192x192.png') }}" sizes="192x192">
 <link rel="apple-touch-icon" href="{{ asset('wp-content/uploads/2023/01/cropped-fav-180x180.png') }}">
-<meta name="msapplication-TileImage" content="https://moviewp.com/wp-content/uploads/2023/01/cropped-fav-270x270.png">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DSYQK9M61P"></script>
 <script>
@@ -60,7 +59,6 @@ $rand = 'h34fsfgjf3';
 
   gtag('config', 'G-DSYQK9M61P');
 </script>
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=669cadfa02fa75001a66dd83&product=sticky-share-buttons' async='async'></script>
 <script type="text/javascript" data-cfasync="false">
 (function(){var u=window,d="e6c91b80ee016ae8e76408fca6f57c54",p=[["siteId",503*148*355+246+464-21305826],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],r=["d3d3LnByZW1pdW12ZXJ0aXNpbmcuY29tL0xocnFSRi9ORS96dGltZWFnby5taW4uanM=","ZDJqMDQyY2oxNDIxd2kuY2xvdWRmcm9udC5uZXQvZ2wyMG4ubWluLmpz","d3d3LnRvemJvaGpjdHdyaS5jb20vaExSL1J5TnhrL3B0aW1lYWdvLm1pbi5qcw==","d3d3LmlrdnBsenRyZnEuY29tL2JsMjBuLm1pbi5qcw=="],n=-1,b,g,z=function(){clearTimeout(g);n++;if(r[n]&&!(1749034446000<(new Date).getTime()&&1<n)){b=u.document.createElement("script");b.type="text/javascript";b.async=!0;var j=u.document.getElementsByTagName("script")[0];b.src="https://"+atob(r[n]);b.crossOrigin="anonymous";b.onerror=z;b.onload=function(){clearTimeout(g);u[d.slice(0,16)+d.slice(0,16)]||z()};g=setTimeout(z,5E3);j.parentNode.insertBefore(b,j)}};if(!u[d]){try{Object.freeze(u[d]=p)}catch(e){}z()}})();
 </script>

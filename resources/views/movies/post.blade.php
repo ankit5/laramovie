@@ -4,6 +4,7 @@
 @endsection
 
 @section('script')
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=669cadfa02fa75001a66dd83&product=sticky-share-buttons' async='async'></script>
 <script type="text/javascript" src="{{ asset('wp-content/themes/moviewp/assets/js/modal.js?dfg') }}" id="modal-js"></script>
 <script type="text/javascript" src="https://static.addtoany.com/menu/page.js?ver=6.4.3" id="addtoany-js"></script>
 @endsection

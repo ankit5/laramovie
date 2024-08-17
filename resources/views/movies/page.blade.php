@@ -4,6 +4,7 @@
 @endsection
 
 @section('script')
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=669cadfa02fa75001a66dd83&product=sticky-share-buttons' async='async'></script>
 @endsection
 
 @section('body_class')
