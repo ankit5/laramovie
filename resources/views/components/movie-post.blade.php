@@ -3,7 +3,7 @@
     $rating = explode("|",@$movie['field_metadata'])
 @endphp
 <div id="post-553" class="carousel-cell item normal front post-553 post type-post status-publish">
-	<a href="/{{ $url }}" rel="bookmark">
+	<a href="/show/{{ $url }}" rel="bookmark">
 	@if(@$movie['field_eps'])
 	<span class="episodes" style="display: inline;">Eps<i>{{ $movie['field_eps'] }}</i></span>
 	@endif
