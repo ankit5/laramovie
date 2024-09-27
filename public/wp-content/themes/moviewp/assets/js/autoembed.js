@@ -1,5 +1,5 @@
 function getIframe(url) {
-    return `<iframe src="${url}" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" scrolling="no" frameborder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>`;
+    return `<iframe src="${url}" scrolling="no" frameborder="0" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>`;
 	}
 
 $(document).on("click", ".buttonLoadHost", function () {
@@ -8,15 +8,15 @@ $(document).on("click", ".buttonLoadHost", function () {
 
     $(".buttonLoadHost").removeClass("active");
     $(this).addClass("active");
-    var url = `https://play.123hdmovies2.xyz/?id=${id}&tab=${tab}`;
-    window.open(url, "_blank");
+    var url = `https://play.123hdmovies2.xyz/?id=${id}&tab=${tab}&iframe=1`;
+    //window.open(url, "_blank");
     //
     //document.location.href = url;
    // window.location.replace(url);  
     //var url = "getEmbed.php?id=" + id + "&sv=" + sv + "&embed=true";
-   // $("#autoembed").html(getIframe(url));
-   // $("#autoembed").addClass("active");
-   // $("#mainautoembed").addClass("hidden");
+    $("#autoembed").html(getIframe(url));
+    $("#autoembed").addClass("active");
+    $("#mainautoembed").addClass("hidden");
 });
 
 $(document).on("click", "#showMainButton", function () {
